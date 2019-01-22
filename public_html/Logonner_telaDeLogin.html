@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Logonner</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <h1> Sistema Logonner </h1>
+    <div> Logar </div>
+    <input type="text" id="nomeLogon"/> 
+    <div> Senha </div>
+    <input type="password" id="senhaLogon"/>
+    <p></p>
+    <button type="submit" id="nomeLogon" onclick="logar();">Entrar</button>
+    <p></p>
+    <p></p>
+    <button id="alterarsenha" onclick="location.href='Loggoner_telaDeAlterarSenha.html'">esqueceu sua senha?</button>
+    <div></div>
+    <button id="cadastrar" onclick="location.href='Loggoner_telaDeCadastro.html'">Cadastre-se</button>
+    
+    <body>
+        
+        <script>
+        function logar(){
+            var nomeLogon = document.getElementById("nomeLogon").value;
+            var senhaLogon = document.getElementById("senhaLogon").value;
+            var nomeCadastro = window.sessionStorage.getItem("nomeCadastro");
+            var senhaCadastro = window.sessionStorage.getItem("senhaCadastro");
+            var senhaAlterada = window.sessionStorage.getItem("senhaAlterada");
+            
+            if (nomeLogon === nomeCadastro && senhaLogon === senhaCadastro || senhaLogon === senhaAlterada){
+                window.location.href="Logonner_ACESSO.html";
+            }else{
+                alert("usuario nao existe ou senha incorreta");
+                window.location.href="Logonner_telaDeLogin.html";
+            }
+            
+        }
+        
+        
+            
+        </script>
+        
+    </body>
+</html>

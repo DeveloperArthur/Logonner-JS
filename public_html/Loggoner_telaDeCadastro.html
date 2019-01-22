@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Loggoner</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <h1>Cadastre-se</h1>
+    <div>Nome</div>
+    <input type="text" id="nomeCadastro"/> 
+    <div>Senha</div>
+    <input type="password" id="senhaCadastro"/>
+    <div>digite a senha novamente</div>
+    <input type="password" id="senhaCadastro2"/>
+    <p></p>
+
+    <button id="guardar" onclick="cadastrar();">Registrar</button>
+    
+    <body>
+
+        <script>
+            function cadastrar() {
+                var senha1 = document.getElementById("senhaCadastro").value;
+                var senha2 = document.getElementById("senhaCadastro2").value;
+
+                if(senha1 !== senha2) {
+                    alert("as senhas precisam ser iguais!");
+                    window.location.href="Loggoner_telaDeCadastro.html";
+                } else {
+                    alert("usuario cadastrado com sucesso");
+                    var nomeCadastro = document.getElementById("nomeCadastro").value;
+                    var senhaCadastro = document.getElementById("senhaCadastro").value;
+                    window.sessionStorage.setItem('nomeCadastro', nomeCadastro);
+                    window.sessionStorage.setItem('senhaCadastro', senhaCadastro);
+                    window.location.href="Logonner_telaDeLogin.html";
+                }
+            }
+
+        </script>
+
+
+
+    </body>
+</html>

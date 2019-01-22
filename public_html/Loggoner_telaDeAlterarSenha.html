@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Logonner</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <h1> Sistema Logonner </h1>
+    <div> Digite sua nova senha </div>
+    <input type="password" id="senhaAlterada"/>
+    <div> Confirme sua nova senha </div>
+    <input type="password" id="novaSenha2"/>
+    <p></p>
+    <button type="submit" id="confirmarNovaSenha" onclick="AlterarSenha();">Confirmar nova senha</button>
+    <body>
+        <script>
+            //var nomeLogon = document.getElementById("nomeLogon").value;
+            function AlterarSenha(){
+            var novaSenha1 = document.getElementById("senhaAlterada").value;
+            var novaSenha2 = document.getElementById("novaSenha2").value;
+            
+            
+            
+            if (novaSenha1 === novaSenha2){
+                var senhaAlterada = document.getElementById("senhaAlterada").value;
+                window.sessionStorage.setItem('senhaAlterada', senhaAlterada);
+                alert("Senha redefinida");
+                window.location.href="Logonner_telaDeLogin.html";
+            } else {
+                alert("As senhas precisam ser iguais");
+                window.location.href="Loggoner_telaDeAlterarSenha.html";
+            }
+    
+            }
+        </script>
+        
+        
+    </body>
+</html>
